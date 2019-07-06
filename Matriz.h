@@ -1,5 +1,6 @@
 #include<iostream>
 #include<cstdlib>
+#define Error cout<<"######################"<<endl  
 using namespace std;
 
 class Matriz
@@ -15,7 +16,10 @@ public:
     void setN(int);
 
     void getMatriz();
+    void getMatriz(int,int);
     void setMatriz();
+    void setMatriz(int**);
+    
 
     void gauss(int,int);
 };
