@@ -8,9 +8,9 @@ void getMatrices(Matriz **M,int i, int j );
 
 int main()
 {
-    Matriz m;
+    
 
-    int i = 0, j;
+    /* int i = 0, j;
     cout<<"Numero de matrices a introducir "<<endl;
     cin>>j;
 
@@ -25,9 +25,26 @@ int main()
     setMatrices(M,0,j);
     system("cls");
 
-        getMatrices(M,0,j);
+        getMatrices(M,0,j); */
+
+    int aux[][5] = {
+        {2,3,5,8,2},
+        {1,0,3,2,1},
+        {4,3,2,1,1},
+        {5,2,3,4,6}
+    };
+    Matriz *m = new Matriz();
+   // m.setN(3);
+    m->setMatriz((int**)aux);
+    //m->getMatriz(4,5);
+    // m.gauss(0,0);
+    //m.getMatriz();
+
+      //  getMatrices(M,0,j);
+
+    // M[0]->getMatriz();
   
-    vector<int> v;
+    /* vector<int> v;
     v.reserve(10);
 
     for( int i = 0; i<10;i++) v[i] = i;
@@ -38,7 +55,7 @@ int main()
     do{
         M[i]->~Matriz();
     }while((i++) < j-1);
-
+ */
     return 0;
 }
 
