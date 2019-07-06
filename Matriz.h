@@ -17,5 +17,6 @@ public:
     void getMatriz();
     void setMatriz();
 
+    void gauss(int,int);
 };
 

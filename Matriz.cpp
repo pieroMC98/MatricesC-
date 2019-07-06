@@ -27,6 +27,17 @@ void Matriz::getMatriz(){
     }
 }
 
+void Matriz::gauss(int i, int j){
+
+    //primera fila
+    if( i < N){
+
+    for(int i = 0; i < N; i++)  (this->matriz)[i][j]*=-(this->matriz)[i][j];
+
+    }
+    
+
+}
 
 Matriz::Matriz(/* args */){}
 
