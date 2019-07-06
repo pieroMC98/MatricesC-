@@ -24,7 +24,12 @@ void Matriz::setMatriz(){
 void Matriz::setMatriz(int **A){
     this->matriz = NULL;
     this->matriz = new int*[N];
+
+    if( this->matriz == NULL) cout<<"Su puta madre";
     
+
+
+
     this->matriz = A;
     Error;
 
