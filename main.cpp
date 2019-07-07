@@ -1,31 +1,28 @@
 #include "Matriz.cpp"
 #include<vector>
 
-int sumaRecursiva(vector<int> *V, int i);
-void setMatrices(Matriz **M,int i, int j );
-void getMatrices(Matriz **M,int i, int j );
-void busquedaRecursiva(int i, int j,char l, int);
+Matriz** createMatrix       (int *j);
+bool     deleteMatrix       (int j, Matriz** M);
+void     busquedaRecursiva  (int i, int j,char l, int);
+int      sumaRecursiva      (vector<int> *V, int i);
+void     setMatrices        (Matriz **M,int i, int j );
+void     getMatrices        (Matriz **M,int i, int j );
 
 int main()
 {
-    
+     int i,j;
+    system("clear");
 
-    /* int i = 0, j;
-    cout<<"Numero de matrices a introducir "<<endl;
-    cin>>j;
-
-    Matriz **M = new Matriz*[j];
-    do{
-         M[i] = new Matriz();
-    }while( (i++) < j-1);
-
+    /*Matriz **M = createMatrix(&j);
     
     cout<<"instanciar::"<<endl;
    
     setMatrices(M,0,j);
-    system("cls");
+    system("clear");
 
-        getMatrices(M,0,j); */
+    getMatrices(M,0,j);
+    M[0]->gauss(0,0);
+    getMatrices(M,0,j);*/
 
     int aux[][5] = {
         {2,3,5,8,2},
@@ -33,30 +30,21 @@ int main()
         {4,3,2,1,1},
         {5,2,3,4,6}
     };
-    Matriz *m = new Matriz();
-   // m.setN(3);
-   // m->setMatriz((int**)aux);
-    //m->getMatriz(4,5);
-    // m.gauss(0,0);
-    //m.getMatriz();
 
-      //  getMatrices(M,0,j);
+    Matriz *m = new Matriz;
+    // cout<<"fila: "<<sizeof (aux)/ sizeof (aux[0])<<endl<<"columna: "<<sizeof (aux[0])/sizeof(int)<<endl;
 
-    // M[0]->getMatriz();
-  
-    /* vector<int> v;
-    v.reserve(10);
+    m->setMatriz((int**)aux);
+    m->getMatriz();
 
-    for( int i = 0; i<10;i++) v[i] = i;
-
-    cout<<sumaRecursiva(&v, 0)<<endl;
-
-    i = 0;
-    do{
-        delete M[i]
-    }while((i++) < j-1);
- */
-    busquedaRecursiva(0,101,'\0',0);
+    /* if( deleteMatrix(j,M) == true){
+        cout<<"Elementos borrados correctamente"<<endl;
+        return EXIT_SUCCESS;
+    }else{
+        cout<<"Error liberar memoria"<<endl;
+        return EXIT_FAILURE;
+    } */
+    //busquedaRecursiva(0,101,'\0',0);
     return 0;
 }
 
@@ -67,22 +55,37 @@ int sumaRecursiva(vector<int> *V, int i){
         }       
 }
 
-void busquedaRecursiva(int i, int j,char l, int intentos){
-    int k = (i+j)/2; 
+Matriz** createMatrix(int *j){    
+    cout<<"Numero de matrices a introducir "<<endl;
+    cin>>*j;
 
-    cout<<"Su numero es "<<k<<" | opciones( =, <, >)"<<endl;
-    cin>>l;
+    Matriz **M = new Matriz*[*j];
+    int i = 0;
+        do{
+            M[i] = new Matriz();
+        }while( (i++) < (*j)-1);
+return M;
+}
 
-    if( l == '=') cout<<"Su numero es "<<k<<", en "<<intentos<<" intentos."<<endl;
-        else if( l == '<')  busquedaRecursiva(i,k,l,intentos+1);
-          else if( l == '>')  busquedaRecursiva(k,j,l,intentos+1);    
+bool deleteMatrix(int j, Matriz** M){
+   int i = 0;
+    do{
+        delete M[i];
+        M[i]->~Matriz();
+    }while( (i++) < j-1 );
+
+    //delete []M;
+    cout<<M;
+return ( M == NULL ? true : false);
 }
 void setMatrices(Matriz **M,int i, int j ){
-    int n;
+    int x,y;
     if( i <= j-1){
+        cout<<endl<<endl;
         cout<<"introduzca N para matriz "<<i+1<<endl;
-        cin>>n;
-        M[i]->setN(n);
+        cin>>x>>y;
+        M[i]->setI(x);
+        M[i]->setJ(y);
 
         cout<<"-------------"<<endl;
         M[i]->setMatriz();
@@ -97,4 +100,15 @@ void getMatrices(Matriz **M,int i, int j ){
         cout<<endl;
         getMatrices(M, i+1, j);
     }
+}
+
+void busquedaRecursiva(int i, int j,char l, int intentos){
+    int k = (i+j)/2; 
+
+    cout<<"Su numero es "<<k<<" | opciones( =, <, >)"<<endl;
+    cin>>l;
+
+    if( l == '=') cout<<"Su numero es "<<k<<", en "<<intentos<<" intentos."<<endl;
+        else if( l == '<')  busquedaRecursiva(i,k,l,intentos+1);
+          else if( l == '>')  busquedaRecursiva(k,j,l,intentos+1);    
 }

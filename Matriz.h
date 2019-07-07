@@ -1,26 +1,28 @@
 #include<iostream>
 #include<cstdlib>
+#include<unistd.h>
 #define Error cout<<"######################"<<endl  
 using namespace std;
 
-class Matriz
-{
-private:
-    int **matriz;
-    int N;
-public:
-    Matriz(/* args */);
-    ~Matriz();
+class Matriz{
+    private:
+        int** matriz;
+        int   i,j;
+    public:
+        Matriz  (/* args */);
+        ~Matriz ();
 
-    int getN();
-    void setN(int);
+        int  getI    ();
+        void setI   (int);
 
-    void getMatriz();
-    void getMatriz(int,int);
-    void setMatriz();
-    void setMatriz(int**);
-    
+        int  getJ    ();
+        void setJ   (int);
 
-    void gauss(int,int);
+        void getMatriz  ();
+        void getMatriz  (int,int);
+        
+        void setMatriz  ();
+        void setMatriz  (int**);
+        void gauss      (int,int);
 };
 
