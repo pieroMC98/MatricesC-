@@ -4,7 +4,7 @@
 int sumaRecursiva(vector<int> *V, int i);
 void setMatrices(Matriz **M,int i, int j );
 void getMatrices(Matriz **M,int i, int j );
-
+void busquedaRecursiva(int i, int j,char l, int);
 
 int main()
 {
@@ -35,7 +35,7 @@ int main()
     };
     Matriz *m = new Matriz();
    // m.setN(3);
-    m->setMatriz((int**)aux);
+   // m->setMatriz((int**)aux);
     //m->getMatriz(4,5);
     // m.gauss(0,0);
     //m.getMatriz();
@@ -53,9 +53,10 @@ int main()
 
     i = 0;
     do{
-        M[i]->~Matriz();
+        delete M[i]
     }while((i++) < j-1);
  */
+    busquedaRecursiva(0,101,'\0',0);
     return 0;
 }
 
@@ -66,6 +67,16 @@ int sumaRecursiva(vector<int> *V, int i){
         }       
 }
 
+void busquedaRecursiva(int i, int j,char l, int intentos){
+    int k = (i+j)/2; 
+
+    cout<<"Su numero es "<<k<<" | opciones( =, <, >)"<<endl;
+    cin>>l;
+
+    if( l == '=') cout<<"Su numero es "<<k<<", en "<<intentos<<" intentos."<<endl;
+        else if( l == '<')  busquedaRecursiva(i,k,l,intentos+1);
+          else if( l == '>')  busquedaRecursiva(k,j,l,intentos+1);    
+}
 void setMatrices(Matriz **M,int i, int j ){
     int n;
     if( i <= j-1){
