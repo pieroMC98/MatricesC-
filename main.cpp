@@ -7,11 +7,15 @@ void     busquedaRecursiva  (int i, int j,char l, int);
 int      sumaRecursiva      (vector<int> *V, int i);
 void     setMatrices        (Matriz **M,int i, int j );
 void     getMatrices        (Matriz **M,int i, int j );
+//void     WTF                (int** v);
 
+void WTF( int v[][5]){
+    Error;
+    cout<<v[0][0]<<endl;
+}
 int main()
 {
-     int i,j;
-    system("clear");
+    //system("clear");
 
     /*Matriz **M = createMatrix(&j);
     
@@ -31,10 +35,13 @@ int main()
         {5,2,3,4,6}
     };
 
-    Matriz *m = new Matriz;
+    Error;
+
+    WTF(aux);
+      Matriz *m = new Matriz;
     // cout<<"fila: "<<sizeof (aux)/ sizeof (aux[0])<<endl<<"columna: "<<sizeof (aux[0])/sizeof(int)<<endl;
 
-    m->setMatriz((int**)aux);
+    m->setMatriz(aux);
     m->getMatriz();
 
     /* if( deleteMatrix(j,M) == true){
@@ -112,3 +119,4 @@ void busquedaRecursiva(int i, int j,char l, int intentos){
         else if( l == '<')  busquedaRecursiva(i,k,l,intentos+1);
           else if( l == '>')  busquedaRecursiva(k,j,l,intentos+1);    
 }
+

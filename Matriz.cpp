@@ -20,9 +20,7 @@ int Matriz::getJ(){
 
 void Matriz::setMatriz(){
     this->matriz = new int*[ this->i ];        
-        for( int k = 0; k < (this->j + (this->i - this->j)); k++) (this->matriz)[k] =new int[this->j + (this->i - this->j) ];
-
-        
+        for( int k = 0; k < (this->j + (this->i - this->j)); k++) (this->matriz)[k] =new int[this->j + (this->i - this->j) ];        
 
             for( int i = 0; i< this->i; i++)
                 for( int j = 0; j < this->j; j++){
@@ -32,16 +30,16 @@ void Matriz::setMatriz(){
 
 }
 
-void Matriz::setMatriz(int **A){
+void Matriz::setMatriz(int A[][ 5 ]){
     Error;
     cout<<A[0][0]<<endl;
-
+/* 
         this->matriz = new int*[ 4 ];        
         for( int k = 0; k < 5; k++) (this->matriz)[k] =new int[5];
   
     for(int i = 0; i<4;i++)
         for(int j = 0; j<5;j++) this->matriz[i][j] = A[i][j];
-    cout<<matriz[0][0]<<endl;
+    cout<<matriz[0][0]<<endl; */
 }
 
 void Matriz::getMatriz(){

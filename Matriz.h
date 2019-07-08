@@ -22,7 +22,7 @@ class Matriz{
         void getMatriz  (int,int);
         
         void setMatriz  ();
-        void setMatriz  (int**);
+        void setMatriz  (int[][5]);
         void gauss      (int,int);
 };
 
