@@ -31,15 +31,11 @@ void Matriz::setMatriz(){
 }
 
 void Matriz::setMatriz(int A[][ 5 ]){
-    Error;
-    cout<<A[0][0]<<endl;
-/* 
         this->matriz = new int*[ 4 ];        
         for( int k = 0; k < 5; k++) (this->matriz)[k] =new int[5];
   
     for(int i = 0; i<4;i++)
         for(int j = 0; j<5;j++) this->matriz[i][j] = A[i][j];
-    cout<<matriz[0][0]<<endl; */
 }
 
 void Matriz::getMatriz(){
@@ -50,15 +46,26 @@ void Matriz::getMatriz(){
     }
 }
 
+/* void Matriz::getMatriz(int A[][5]){
+    for(int i = 0; i < 4; i++){
+        for( int j = 0; j< 5; j++)
+        cout<< " "<<(this->matriz)[i][j];
+            cout<<endl;
+    }
+} */
+
 void Matriz::gauss(int i, int j){
 
     //primera fila
     if( i != this->i && j != this->j)
         if( i < this->i){
+            cout<<this->matriz[i][j]<<" ! "<<this->matriz[i+1][j]<<endl;
+
             float m = this->matriz[i][j]/this->matriz[i+1][j];
             cout<<m<<endl;
 
                 for(int k = i; k < this->j; k++) this->matriz[k][j] = this->matriz[k][j] - m*(this->matriz[k+1][j]);
+                Error;
             Matriz::gauss(i+1, j);
         }else if( i == this->i){ 
             i = 0;

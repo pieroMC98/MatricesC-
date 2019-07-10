@@ -19,7 +19,7 @@ class Matriz{
         void setJ   (int);
 
         void getMatriz  ();
-        void getMatriz  (int,int);
+        void getMatriz  (int[][5]);
         
         void setMatriz  ();
         void setMatriz  (int[][5]);

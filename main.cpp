@@ -10,7 +10,6 @@ void     getMatrices        (Matriz **M,int i, int j );
 //void     WTF                (int** v);
 
 void WTF( int v[][5]){
-    Error;
     cout<<v[0][0]<<endl;
 }
 int main()
@@ -35,14 +34,18 @@ int main()
         {5,2,3,4,6}
     };
 
-    Error;
-
-    WTF(aux);
       Matriz *m = new Matriz;
     // cout<<"fila: "<<sizeof (aux)/ sizeof (aux[0])<<endl<<"columna: "<<sizeof (aux[0])/sizeof(int)<<endl;
 
+    m->setI(4);
+    m->setJ(5);
     m->setMatriz(aux);
+
+    // m->getMatriz();
+    m->gauss(0,0);
+    cout<<endl<<endl;
     m->getMatriz();
+
 
     /* if( deleteMatrix(j,M) == true){
         cout<<"Elementos borrados correctamente"<<endl;
