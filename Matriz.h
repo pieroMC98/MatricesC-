@@ -1,7 +1,9 @@
 #include<iostream>
 #include<cstdlib>
 #include<unistd.h>
-#define Error cout<<"######################"<<endl  
+#include "Fraccion.cpp"
+#define Error(i) cout<<"#######################################-->"<<i<<endl 
+#define jump cout<<endl<<endl 
 using namespace std;
 
 class Matriz{
@@ -12,10 +14,10 @@ class Matriz{
         Matriz  (/* args */);
         ~Matriz ();
 
-        int  getI    ();
+        int  getI   ();
         void setI   (int);
 
-        int  getJ    ();
+        int  getJ   ();
         void setJ   (int);
 
         void getMatriz  ();
@@ -24,5 +26,6 @@ class Matriz{
         void setMatriz  ();
         void setMatriz  (int[][5]);
         void gauss      (int,int);
+
 };
 

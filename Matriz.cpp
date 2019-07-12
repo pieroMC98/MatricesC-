@@ -1,5 +1,6 @@
 #include"Matriz.h"
 
+
 Matriz::Matriz(/* args */){}
 void Matriz::setI(int N){
     this->i = N;
@@ -57,22 +58,58 @@ void Matriz::getMatriz(){
 void Matriz::gauss(int i, int j){
 
     //primera fila
-    if( i != this->i && j != this->j)
-        if( i < this->i){
-            cout<<this->matriz[i][j]<<" ! "<<this->matriz[i+1][j]<<endl;
+  /*   if( i != this->i && j != this->j){
+                cout<<"this->i = "<<this->i<<" this->j = "<<this->j<<endl;
 
-            float m = this->matriz[i][j]/this->matriz[i+1][j];
-            cout<<m<<endl;
+            if( i+1 == this->i) this->matriz[i+1][j] = 1;
+        float m = this->matriz[i][j]/this->matriz[i+1][j];
+            if( i < this->i){
+                // cout<<this->matriz[i][j]<<" ! "<<this->matriz[i+1][j]<<endl;
+                Error(1);
+                cout<<"m = "<<m<<"\ni = "<<i<<" j = "<<j<<endl<<endl;
+                    for(int k = i; k < this->j - 1 ; k++){
+                        cout<<k<<" "<<i<<endl;
+                        cout<<"k = "<<k<<" matriz = "<<this->matriz[k][j]<<" || matriz sig = "<<this->matriz[k+1][j]<<endl;
+                        this->matriz[k][j] = this->matriz[k][j] - m*(this->matriz[k+1][j]);
+                        
+                        }
+                    Error(2);
+                Matriz::gauss(i+1, j);
+            }else if( i== this->i){ 
+                i = 0;
+                Error(3);
+                Matriz::gauss(i+1, j+1);        
+            }
+    } */
 
-                for(int k = i; k < this->j; k++) this->matriz[k][j] = this->matriz[k][j] - m*(this->matriz[k+1][j]);
-                Error;
-            Matriz::gauss(i+1, j);
-        }else if( i == this->i){ 
-            i = 0;
-            Error;
-            Matriz::gauss(i+1, j+1);        
+    Fraccion *C1 = new Fraccion;
+    Fraccion *C2 = new Fraccion;
+    Fraccion *C3 = new Fraccion;
+    
+     if( i != this->i && j != this->j){
+
+        //float m = this->matriz[0][j]/this->matriz[i][j];
+        if( i < (4-i)){
+           // cout<<"m = "<<m<<" | this->matriz[0][j]= "<<this->matriz[0][j]<<" | his->matriz[i][j]= "<<this->matriz[i][j]<<endl;
+
+            Fraccion *r = C1->diferencia( *(new Fraccion(this->matriz[0][j],1 )), 
+                            ( C2->multiplicar( *(C3->cociente( *(new Fraccion(this->matriz[0][j],1)), *(new Fraccion(this->matriz[i][j],1)) ) ), *(new Fraccion(this->matriz[i][j],1))) ,
+                             *(new Fraccion (this->matriz[i][j],1)))  );
+
+             this->matriz[i][j] = this->matriz[0][j] - (this->matriz[0][j]/this->matriz[i][j]*(this->matriz[i][j]));
+            cout<<r->imprimir();
+             Matriz::gauss(i+1, j);
+
+             
+        }else{
+            i = 1;
+            Matriz::gauss(i, j+1);
         }
+    }
 }
+
+
+
 
 
 Matriz::~Matriz(){}

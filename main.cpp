@@ -1,4 +1,5 @@
 #include "Matriz.cpp"
+//#include "Fraccion.cpp"
 #include<vector>
 
 Matriz** createMatrix       (int *j);
@@ -36,13 +37,25 @@ int main()
 
       Matriz *m = new Matriz;
     // cout<<"fila: "<<sizeof (aux)/ sizeof (aux[0])<<endl<<"columna: "<<sizeof (aux[0])/sizeof(int)<<endl;
+    Fraccion uno(4,5);
+    Fraccion dos(4,5);
 
+    Fraccion *r = new Fraccion;
+    
+    Fraccion *x = r->cociente(uno,dos);
+
+    
+    cout<<x->imprimir();
+    jump;
+    Error(1);
+    
     m->setI(4);
     m->setJ(5);
     m->setMatriz(aux);
 
-    // m->getMatriz();
-    m->gauss(0,0);
+    m->getMatriz();
+    jump;
+    m->gauss(1,0);
     cout<<endl<<endl;
     m->getMatriz();
 
