@@ -2,13 +2,13 @@
 #include<cstdlib>
 #include<unistd.h>
 #include "Fraccion.cpp"
-#define Error(i) cout<<"#######################################-->"<<i<<endl 
+#define Error(i) cout<<"--------------------------------------->"<<i<<endl 
 #define jump cout<<endl<<endl 
 using namespace std;
 
 class Matriz{
     private:
-        int** matriz;
+        float** matriz;
         int   i,j;
     public:
         Matriz  (/* args */);
@@ -24,7 +24,7 @@ class Matriz{
         void getMatriz  (int[][5]);
         
         void setMatriz  ();
-        void setMatriz  (int[][5]);
+        void setMatriz  (float[][5]);
         void gauss      (int,int);
 
 };

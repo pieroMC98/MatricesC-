@@ -28,9 +28,9 @@ int main()
     M[0]->gauss(0,0);
     getMatrices(M,0,j);*/
 
-    int aux[][5] = {
+    float aux[][5] = {
         {2,3,5,8,2},
-        {1,0,3,2,1},
+        {1,5,3,2,1},
         {4,3,2,1,1},
         {5,2,3,4,6}
     };
@@ -40,18 +40,15 @@ int main()
     Fraccion uno(4,5);
     Fraccion dos(4,5);
 
-    Fraccion *r = new Fraccion;
-    
-    Fraccion *x = r->cociente(uno,dos);
+    Fraccion *x = (new Fraccion)->cociente(*(new Fraccion(4,5)),*(new Fraccion(4,5)));
 
     
-    cout<<x->imprimir();
+    // cout<<x->imprimir();
     jump;
-    Error(1);
-    
+   
     m->setI(4);
     m->setJ(5);
-    m->setMatriz(aux);
+    m->setMatriz((float(*)[5])aux);
 
     m->getMatriz();
     jump;
