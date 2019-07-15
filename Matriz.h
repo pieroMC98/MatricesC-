@@ -1,6 +1,7 @@
 #include<iostream>
 #include<cstdlib>
 #include<unistd.h>
+#include<iomanip>
 #include "Fraccion.cpp"
 #define Error(i) cout<<"--------------------------------------->"<<i<<endl 
 #define jump cout<<endl<<endl 

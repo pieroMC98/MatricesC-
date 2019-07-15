@@ -31,7 +31,7 @@ void Matriz::setMatriz(float A[][ 5 ]){
 void Matriz::getMatriz(){
     for(int i = 0; i < this->i; i++){
         for( int j = 0; j< this->j; j++)
-        cout<< "\t "<<(this->matriz)[i][j];
+        cout<<setprecision(3)<< "\t "<<(this->matriz)[i][j];
             cout<<endl<<endl;
     }
 }
@@ -61,21 +61,18 @@ void imprimirM(string **M){
 }
 
 void Matriz::gauss(int i, int j){
-    if( j != 3){
-            cout<<i<<" ! "<<j<<endl;
+   if(  i <= 4 && j <= 3){   
         if( i <= 3){
-            float m = this->matriz[i][j] / this->matriz[j][j];
+               float m = this->matriz[i][j] / this->matriz[j][j];
   
+            //   cout<<("(" +to_string(this->matriz[i][j])+"/"+to_string(this->matriz[j][j])+")\n");
             for( int k = 0; k<5; k++) this->matriz[i][k] = this->matriz[i][k] - m*this->matriz[j][k];
-             //cout<<m<<endl;
-            gauss(i+1, j+1);
-        }else if( i > 3  || !this->matriz[i][j]  ){
-          Error(8);
-          i = j + 1;
-          gauss(i, j);  
+            gauss(i+1, j);
+        }else{
+
+          gauss(j+2, j+1);  
         } 
     }
-
 }
 
 
