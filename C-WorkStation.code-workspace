@@ -8,7 +8,8 @@
 	"settings": {
 		"workbench.colorTheme": "Monokai Classic",
 		"files.associations": {
-			"ostream": "cpp"
+			"ostream": "cpp",
+			"iostream": "cpp"
 		}
 	}
 

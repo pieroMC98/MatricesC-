@@ -12,19 +12,14 @@ Fraccion::Fraccion(){
 
 
 Fraccion* Fraccion::multiplicar(Fraccion a, Fraccion b){
-    if(! (a.D*b.D) )cout<<"te jodes\n";
     return new Fraccion( a.N*b.N, a.D*b.D );
 }
 
 Fraccion* Fraccion::cociente(Fraccion a, Fraccion b){
-    if(! (a.D*b.N) )cout<<"te jodes\n";
-    
     return new Fraccion( a.N*b.D, a.D*b.N );
 }
 
 Fraccion* Fraccion::diferencia(Fraccion a, Fraccion b){
-    if(! (a.D*b.D) )cout<<"te jodes\n";
-    
     return new Fraccion( a.N*b.D - b.N*a.D, a.D*b.D);
 }
 

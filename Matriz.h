@@ -3,13 +3,14 @@
 #include<unistd.h>
 #include<iomanip>
 #include "Fraccion.cpp"
+
 #define Error(i) cout<<"--------------------------------------->"<<i<<endl 
 #define jump cout<<endl<<endl 
 using namespace std;
 
 class Matriz{
     private:
-        float** matriz;
+        float** matriz, **multiplicadores;
         int   i,j;
     public:
         Matriz  (/* args */);
@@ -27,6 +28,5 @@ class Matriz{
         void setMatriz  ();
         void setMatriz  (float[][5]);
         void gauss      (int,int);
-
 };
 

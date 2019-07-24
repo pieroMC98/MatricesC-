@@ -15,7 +15,7 @@ public:
 
     Fraccion* multiplicar   (Fraccion, Fraccion);
     Fraccion* cociente      (Fraccion, Fraccion);
-    Fraccion* diferencia     (Fraccion, Fraccion);
+    Fraccion* diferencia    (Fraccion, Fraccion);
     string    imprimir      ();
 
 };

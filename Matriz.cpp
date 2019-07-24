@@ -1,6 +1,5 @@
 #include"Matriz.h"
 
-
 Matriz::Matriz(/* args */){}
 void Matriz::setI(int N){
     this->i = N;
@@ -19,16 +18,18 @@ int Matriz::getJ(){
     return j;
 }
 
-
-void Matriz::setMatriz(float A[][ 5 ]){
-        this->matriz = new float*[ 4 ];        
-        for( int k = 0; k < 5; k++) (this->matriz)[k] =new float[5];
+void Matriz::setMatriz( float A[][ 5 ] ){
+    this->matriz = new float*[ 4 ];        
+    for( int k = 0; k < 5; k++) (this->matriz)[k] =new float[5];
   
     for(int i = 0; i<4;i++)
         for(int j = 0; j<5;j++) this->matriz[i][j] = A[i][j];
 }
 
 void Matriz::getMatriz(){
+    // this->multiplicadores =(float**) calloc(this->i, sizeof(float*));
+    //     for(int i = 0; i<this->j; j++) multiplicadores[i] = (float)calloc(j,sizeof(float));
+
     for(int i = 0; i < this->i; i++){
         for( int j = 0; j< this->j; j++)
         cout<<setprecision(3)<< "\t "<<(this->matriz)[i][j];
@@ -38,7 +39,7 @@ void Matriz::getMatriz(){
 
 void Matriz::setMatriz(){
     this->matriz = new float*[ this->i ];        
-        for( int k = 0; k < (this->j + (this->i - this->j)); k++) (this->matriz)[k] =new float[this->j + (this->i - this->j) ];        
+        for( int k = 0; k < (this->j + (this->i - this->j)); k++) (this->matriz)[k] = new float[this->j + (this->i - this->j) ];        
 
             for( int i = 0; i< this->i; i++)
                 for( int j = 0; j < this->j; j++){

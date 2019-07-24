@@ -8,11 +8,12 @@ void     busquedaRecursiva  (int i, int j,char l, int);
 int      sumaRecursiva      (vector<int> *V, int i);
 void     setMatrices        (Matriz **M,int i, int j );
 void     getMatrices        (Matriz **M,int i, int j );
-//void     WTF                (int** v);
+//void     WTF              (int** v);
 
 void WTF( int v[][5]){
     cout<<v[0][0]<<endl;
 }
+
 int main()
 {
     //system("clear");
@@ -40,7 +41,7 @@ int main()
     Fraccion uno(4,5);
     Fraccion dos(4,5);
 
-    Fraccion *x = (new Fraccion)->cociente(*(new Fraccion(4,5)),*(new Fraccion(4,5)));
+    // Fraccion *x = (new Fraccion)->cociente(*(new Fraccion(4,5)),*(new Fraccion(4,5)));
 
     
     // cout<<x->imprimir();
@@ -98,6 +99,7 @@ bool deleteMatrix(int j, Matriz** M){
     cout<<M;
 return ( M == NULL ? true : false);
 }
+
 void setMatrices(Matriz **M,int i, int j ){
     int x,y;
     if( i <= j-1){
