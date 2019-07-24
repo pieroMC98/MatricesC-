@@ -1,6 +1,7 @@
-#include "Matriz.cpp"
-//#include "Fraccion.cpp"
+#include "Matriz.h"
+#include "Fraccion.h"
 #include<vector>
+using namespace std;
 
 Matriz** createMatrix       (int *j);
 bool     deleteMatrix       (int j, Matriz** M);
@@ -14,8 +15,7 @@ void WTF( int v[][5]){
     cout<<v[0][0]<<endl;
 }
 
-int main()
-{
+int main(){
     //system("clear");
 
     /*Matriz **M = createMatrix(&j);
@@ -38,8 +38,8 @@ int main()
 
       Matriz *m = new Matriz;
     // cout<<"fila: "<<sizeof (aux)/ sizeof (aux[0])<<endl<<"columna: "<<sizeof (aux[0])/sizeof(int)<<endl;
-    Fraccion uno(4,5);
-    Fraccion dos(4,5);
+    // Fraccion uno(4,5);
+    // Fraccion dos(4,5);
 
     // Fraccion *x = (new Fraccion)->cociente(*(new Fraccion(4,5)),*(new Fraccion(4,5)));
 

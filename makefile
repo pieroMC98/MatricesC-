@@ -3,7 +3,7 @@
 
 G++ = g++
 source = main.cpp
-object = main.cpp
+object = Matriz.cpp
 debug = -g -Wall
 O = -o
 build = main

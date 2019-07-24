@@ -2,9 +2,8 @@
 #include<cstdlib>
 #include<unistd.h>
 #include<iomanip>
-#include "Fraccion.cpp"
 
-#define Error(i) cout<<"--------------------------------------->"<<i<<endl 
+#define Error(i) cout<<"<--------------------------------------->"<<i<<endl 
 #define jump cout<<endl<<endl 
 using namespace std;
 
