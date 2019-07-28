@@ -29,11 +29,27 @@ int main(){
     M[0]->gauss(0,0);
     getMatrices(M,0,j);*/
 
-    float aux[][5] = {
-        {2,3,5,8,2},
-        {1,5,3,2,1},
-        {4,3,2,1,1},
-        {5,2,3,4,6}
+    double aux[][5] = {
+        {2,1,-1,2,5},
+        {4,5,-3,6,9},
+        {-2,5,-2,6,4},
+        {4,11,-4,8,2}
+    };
+
+    double aux1[][4] = {
+        {2,1,-1,2},
+        {4,5,-3,6},
+        {-2,5,-2,6},
+        {4,11,-4,8}
+    };
+
+    double loFlipas[][7] = {
+      { 1, 1 ,-2, 1, 3,-1, 4},
+      { 2,-1, 1, 2, 1,-3, 20},
+      { 1, 3,-3,-1, 2, 1,-15},
+      { 5, 2,-1,-1, 2, 1,-3},
+      {-3,-1, 2, 3, 1, 3, 16},
+      { 4, 3, 1,-6,-3,-2,-27}  
     };
 
       Matriz *m = new Matriz;
@@ -47,10 +63,11 @@ int main(){
     // cout<<x->imprimir();
     jump;
    
-    m->setI(4);
-    m->setJ(5);
-    m->setMatriz((float(*)[5])aux);
-
+    m->setI(6);
+    m->setJ(7);
+    // m->setMatriz((float(*)[5])aux);
+    // m->setMatriz((float(*)[5])aux);
+    m->setMatriz((double(*)[7])loFlipas);
     m->getMatriz();
     jump;
     m->gauss(1,0);
@@ -66,6 +83,9 @@ int main(){
         return EXIT_FAILURE;
     } */
     //busquedaRecursiva(0,101,'\0',0);
+
+    m->~Matriz();
+
     return 0;
 }
 

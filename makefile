@@ -1,17 +1,17 @@
 #makfile 
 #macros definition
 
-G++ = g++
-source = main.cpp
-object = Matriz.cpp
-debug = -g -Wall
-O = -o
-build = main
-RUN = ./
+G++	   = g++
+source = main.cpp Matriz.cpp
+debug  = -g -Wall
+O 	   = -o
+build  = main
+RUN    = ./
 
-${build}: ${object}
-	${G++} ${debug} ${source} ${O} ${build}
+${build}: ${source}
+	@clear
+	@${G++} ${debug} ${source} ${O} ${build}
 
 run: main
-	clear
-	${RUN}main
+	@clear
+	@${RUN}main

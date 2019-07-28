@@ -6,26 +6,27 @@
 #define Error(i) cout<<"<--------------------------------------->"<<i<<endl 
 #define jump cout<<endl<<endl 
 using namespace std;
-
+// stack blitz
 class Matriz{
     private:
-        float** matriz, **multiplicadores;
-        int   i,j;
+        double** matriz;
+        int     i,j;
     public:
-        Matriz  (/* args */);
-        ~Matriz ();
+        Matriz          (/* args */);
+        ~Matriz         ();
 
-        int  getI   ();
-        void setI   (int);
+        int  getI       ();
+        void setI       (int);
 
-        int  getJ   ();
-        void setJ   (int);
+        int  getJ       ();
+        void setJ       (int);
 
         void getMatriz  ();
-        void getMatriz  (int[][5]);
-        
+                
         void setMatriz  ();
-        void setMatriz  (float[][5]);
+        void setMatriz  (double[][7]);
+        double* resultado  ();
+
         void gauss      (int,int);
 };
 
