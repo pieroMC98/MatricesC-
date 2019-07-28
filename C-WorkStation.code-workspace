@@ -9,9 +9,8 @@
 		"workbench.colorTheme": "Monokai Classic",
 		"files.associations": {
 			"ostream": "cpp",
-			"iostream": "cpp"
+			"iostream": "cpp",
+			"iomanip": "cpp"
 		}
 	}
-
-
 }

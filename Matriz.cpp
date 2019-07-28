@@ -60,11 +60,12 @@ void Matriz::gauss(int i, int j){
   
              double m = this->matriz[i][j] / this->matriz[j][j];
    
+            if( !m )  gauss(j+2,j+1);
+
             for( int k = 0; k < this->j ; k++) 
                 this->matriz[i][k] -= m*this->matriz[j][k];            
             
-            if( !m )  gauss(j+2,j+1);
-                else gauss(i+1, j);
+            gauss(i+1, j);
         }else  gauss(j+2, j+1);  
     }
 }

@@ -9,26 +9,8 @@ void     busquedaRecursiva  (int i, int j,char l, int);
 int      sumaRecursiva      (vector<int> *V, int i);
 void     setMatrices        (Matriz **M,int i, int j );
 void     getMatrices        (Matriz **M,int i, int j );
-//void     WTF              (int** v);
-
-void WTF( int v[][5]){
-    cout<<v[0][0]<<endl;
-}
 
 int main(){
-    //system("clear");
-
-    /*Matriz **M = createMatrix(&j);
-    
-    cout<<"instanciar::"<<endl;
-   
-    setMatrices(M,0,j);
-    system("clear");
-
-    getMatrices(M,0,j);
-    M[0]->gauss(0,0);
-    getMatrices(M,0,j);*/
-
     double aux[][5] = {
         {2,1,-1,2,5},
         {4,5,-3,6,9},
@@ -53,20 +35,9 @@ int main(){
     };
 
       Matriz *m = new Matriz;
-    // cout<<"fila: "<<sizeof (aux)/ sizeof (aux[0])<<endl<<"columna: "<<sizeof (aux[0])/sizeof(int)<<endl;
-    // Fraccion uno(4,5);
-    // Fraccion dos(4,5);
-
-    // Fraccion *x = (new Fraccion)->cociente(*(new Fraccion(4,5)),*(new Fraccion(4,5)));
-
-    
-    // cout<<x->imprimir();
-    jump;
-   
-    m->setI(6);
-    m->setJ(7);
-    // m->setMatriz((float(*)[5])aux);
-    // m->setMatriz((float(*)[5])aux);
+              m->setI(6);
+              m->setJ(7);
+ 
     m->setMatriz((double(*)[7])loFlipas);
     m->getMatriz();
     jump;
