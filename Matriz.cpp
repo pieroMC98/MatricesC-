@@ -48,10 +48,13 @@ void Matriz::setMatriz(){
 
 }
 
-double* Matriz::resultado(){
-
-
-return NULL;
+double* resultado  (int i,int j,  double(*)[7])
+{
+    double* aux = new double[7];
+        if( i < 7 ){
+            
+            return aux[i] + resultado();
+        }else return aux;
 }
 
 void Matriz::gauss(int i, int j){

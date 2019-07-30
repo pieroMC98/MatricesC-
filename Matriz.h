@@ -6,7 +6,7 @@
 #define Error(i) cout<<"<--------------------------------------->"<<i<<endl 
 #define jump cout<<endl<<endl 
 using namespace std;
-// stack blitz
+
 class Matriz{
     private:
         double** matriz;
@@ -25,7 +25,7 @@ class Matriz{
                 
         void setMatriz  ();
         void setMatriz  (double[][7]);
-        double* resultado  ();
+        double* resultado  (int,int,double(*)[7]);
 
         void gauss      (int,int);
 };
