@@ -2,7 +2,7 @@
 #macros definition
 
 G++	   = g++
-source = main.cpp Matriz.cpp
+source = main.cpp Matriz.cpp Sudoku.cpp
 debug  = -g -Wall
 O 	   = -o
 build  = main

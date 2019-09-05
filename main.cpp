@@ -1,6 +1,8 @@
-#include "Matriz.h"
+//#include "Matriz.h"
 #include "Fraccion.h"
+#include "Sudoku.h"
 #include<vector>
+#define T 7 
 using namespace std;
 
 Matriz** createMatrix       (int *j);
@@ -34,29 +36,34 @@ int main(){
       { 4, 3, 1,-6,-3,-2,-27}  
     };
 
+    double matrix[][9] = {
+    {6,5,0,8,7,3,0,9,0},
+    {0,0,3,2,5,0,0,0,8},
+    {9,8,0,1,0,4,3,5,7},
+    {1,0,5,0,0,0,0,0,0},
+    {4,0,0,0,0,0,0,0,2},
+    {0,0,0,0,0,0,5,0,3},
+    {5,7,8,3,0,1,0,2,6},
+    {2,0,0,0,4,8,9,0,0},
+    {0,9,0,6,2,5,0,8,1}
+};
+
       Matriz *m = new Matriz;
-              m->setI(6);
-              m->setJ(7);
+              m->setI( T );
+              m->setJ( T );
  
-    m->setMatriz((double(*)[7])loFlipas);
+    m->setMatriz((double(*)[ T ])loFlipas);
     m->getMatriz();
     jump;
-    m->gauss(1,0);
-    cout<<endl<<endl;
-    m->getMatriz();
+    //m->gauss(1,0);
+
+    cout<<endl<<" ---- "<<endl;
+   // m->getMatriz();
 
 
-    /* if( deleteMatrix(j,M) == true){
-        cout<<"Elementos borrados correctamente"<<endl;
-        return EXIT_SUCCESS;
-    }else{
-        cout<<"Error liberar memoria"<<endl;
-        return EXIT_FAILURE;
-    } */
-    //busquedaRecursiva(0,101,'\0',0);
 
-    m->~Matriz();
-
+    //m->~Matriz();
+    delete m;
     return 0;
 }
 
@@ -82,7 +89,7 @@ return M;
 bool deleteMatrix(int j, Matriz** M){
    int i = 0;
     do{
-        delete M[i];
+        //delete M[i];
         M[i]->~Matriz();
     }while( (i++) < j-1 );
 

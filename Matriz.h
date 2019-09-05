@@ -2,31 +2,31 @@
 #include<cstdlib>
 #include<unistd.h>
 #include<iomanip>
-
+#define SIZE 7
 #define Error(i) cout<<"<--------------------------------------->"<<i<<endl 
 #define jump cout<<endl<<endl 
 using namespace std;
 
 class Matriz{
-    private:
+    protected:
         double** matriz;
         int     i,j;
     public:
-        Matriz          (/* args */);
-        ~Matriz         ();
+        Matriz             (/* args */);
+        ~Matriz            ();
 
-        int  getI       ();
-        void setI       (int);
+        int  getI          ();
+        void setI          (int);
 
-        int  getJ       ();
-        void setJ       (int);
+        int  getJ          ();
+        void setJ          (int);
 
-        void getMatriz  ();
+        void getMatriz     ();
                 
-        void setMatriz  ();
-        void setMatriz  (double[][7]);
-        double* resultado  (int,int,double(*)[7]);
+        void setMatriz     ();
+        void setMatriz     (double[][SIZE]);
+        double* resultado  (int,int,double(*)[SIZE]);
 
-        void gauss      (int,int);
+        void gauss         (int,int);
 };
 

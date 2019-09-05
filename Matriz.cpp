@@ -18,7 +18,7 @@ int Matriz::getJ(){
     return j;
 }
 
-void Matriz::setMatriz( double A[][ 7] ){
+void Matriz::setMatriz( double A[][  SIZE ] ){
   
     this->matriz = new double*[ this->i ];        
     for( int k = 0; k < this->j ; k++) (this->matriz)[k] =new double[ this->j ];
@@ -48,13 +48,15 @@ void Matriz::setMatriz(){
 
 }
 
-double* resultado  (int i,int j,  double(*)[7])
-{
+double* resultado  (int i,int j,  double(*)[ SIZE ])
+{/* 
     double* aux = new double[7];
         if( i < 7 ){
             
             return aux[i] + resultado();
         }else return aux;
+ */
+return 0;
 }
 
 void Matriz::gauss(int i, int j){
