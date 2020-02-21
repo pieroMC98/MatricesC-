@@ -16,7 +16,7 @@ class Fraccion {
 	int N, D;
 
        public:
-	Fraccion(int, int);
+	Fraccion(long long int, long long int);
 	Fraccion(int);
 	Fraccion();
 	~Fraccion(){};

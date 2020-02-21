@@ -14,4 +14,4 @@ ${build}: ${source}
 
 run: main
 	@clear
-	@${RUN}main
+	@${RUN}main 1> out.txt

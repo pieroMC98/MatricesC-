@@ -4,6 +4,7 @@
 #include "Matriz.h"
 
 //#include "Sudoku.h"
+
 #define T 7
 using namespace std;
 
@@ -27,23 +28,26 @@ int main() {
 		{1, 0, 5, 0, 0, 0, 0, 0, 0}, {4, 0, 0, 0, 0, 0, 0, 0, 2}, {0, 0, 0, 0, 0, 0, 5, 0, 3},
 		{5, 7, 8, 3, 0, 1, 0, 2, 6}, {2, 0, 0, 0, 4, 8, 9, 0, 0}, {0, 9, 0, 6, 2, 5, 0, 8, 1}};
 
-	Fraccion** fraccion = (Fraccion**)malloc((T - 1) * sizeof(Fraccion*));
-	for (int i = 0; i < (T - 1); i++) fraccion[i] = (Fraccion*)calloc(T, sizeof(Fraccion));
+	Fraccion** fraccion = new Fraccion*[T - 1];
+
+	for (int i = 0; i < (T - 1); i++) fraccion[i] = new Fraccion[SIZE];
 
 	for (int i = 0; i < (T - 1); i++)
-		for (size_t j = 0; j < T; j++) {
+		for (int j = 0; j < T; j++) {
 			fraccion[i][j].setN((int)loFlipas[i][j]);
 			fraccion[i][j].setD(1);
 		}
 
-	std::cout << fraccion[0][2].imprimir() << std::endl;
 	Matriz* m = new Matriz;
 	Matriz* f = new Matriz;
+	;
 
 	f->setI(T);
 	f->setJ(T);
-	f->setMatrizFraccion((Fraccion(*)[T])fraccion);// F 
+
+	f->setMatrizFraccion((Fraccion**)fraccion);  // F
 	f->getMatrizGauss();
+
 	m->setI(T);
 	m->setJ(T);
 
@@ -52,8 +56,11 @@ int main() {
 
 	jump;
 	m->gauss(1, 0);
-	cout << endl << " ---- " << endl;
 	m->getMatriz();
+	f->gaussFraccion(1, 0);
+	f->getMatrizGauss();
+
+	cout << endl << " ---- " << endl;
 
 	delete m;
 	return 0;

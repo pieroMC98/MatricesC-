@@ -8,6 +8,7 @@ class Matriz : public Fraccion {
 
        public:
 	Matriz(/* args */);
+
 	~Matriz();
 
 	int getI();
@@ -23,7 +24,8 @@ class Matriz : public Fraccion {
 	void setMatriz(long double[][SIZE]);
 
 	void setMatrizFraccion();
-	void setMatrizFraccion(Fraccion[][SIZE]);
+	void setMatrizFraccion(Fraccion**);
+
 
 	double *resultado(int, int, double (*)[SIZE]);
 

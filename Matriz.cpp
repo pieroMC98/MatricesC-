@@ -2,6 +2,7 @@
 
 #include <iostream>
 
+
 Matriz::Matriz(/* args */) {}
 void Matriz::setI(int N) { this->i = N; }
 
@@ -18,14 +19,12 @@ void Matriz::setMatriz(long double A[][SIZE]) {
 		for (int j = 0; j < this->i; j++) this->matriz[i][j] = A[i][j];
 }
 
-void Matriz::setMatrizFraccion(Fraccion A[][SIZE]) {
-	if (A == NULL) cout << "que te joda";
-	cout << A[0][0].imprimir() << endl;
+void Matriz::setMatrizFraccion(Fraccion **A) {
 	this->matriz_gauss = new Fraccion *[this->i];
 	for (int k = 0; k < this->i; k++) this->matriz_gauss[k] = new Fraccion[this->j];
-
-	for (int i = 0; i < this->i; i++)
-		for (int j = 0; j < this->i; j++) this->matriz_gauss[i][j] = A[i][j];
+	Error(2);
+	for (int i = 0; i < (this->i - 1); i++)
+		for (int j = 0; j < this->j; j++) this->matriz_gauss[i][j] = A[i][j];
 }
 
 void Matriz::getMatriz() {
@@ -36,9 +35,8 @@ void Matriz::getMatriz() {
 }
 
 void Matriz::getMatrizGauss() {
-	this->matriz_gauss[0][0].imprimir();
-	for (int i = 0; i < this->i; i++) {
-		for (int j = 0; j < this->j; j++) this->matriz_gauss[i][j].imprimir();
+	for (int i = 0; i < (this->i - 1); i++) {
+		for (int j = 0; j < this->j; j++) cout << this->matriz_gauss[i][j].imprimir();
 		cout << endl << endl << endl;
 	}
 }
@@ -73,6 +71,7 @@ void Matriz::gauss(int i, int j) {
 			if (!m) gauss(j + 2, j + 1);
 
 			for (int k = 0; k < this->j; k++) this->matriz[i][k] -= m * this->matriz[j][k];
+			// this->matriz[i][k] =  this->matriz[i]`[k] - (m * this->matriz[j][k])
 
 			gauss(i + 1, j);
 		} else
@@ -83,14 +82,25 @@ void Matriz::gauss(int i, int j) {
 void Matriz::gaussFraccion(int i, int j) {
 	if (j < (this->i - 1)) {
 		if (i < (this->i)) {
-			Fraccion *aux = new Fraccion(this->matriz_gauss[i][j].getN(), this->matriz_gauss[j][j].getN());
-			if (!aux->getN()) gauss(i + 1, j);
+			Fraccion *aux = new Fraccion;
 
-			for (int k = 0; k < this->j; k++)
-				this->matriz_gauss[i][k] =
-					*(this->matriz_gauss[i][k].diferencia(*aux, this->matriz_gauss[i][k]));
+			aux = aux->cociente(this->matriz_gauss[i][j], this->matriz_gauss[j][j]);
+
+			if (!aux->getN()) gaussFraccion(j + 2, j + 1);
+			// std::cout << "["<<i<<"]"<< "["<<j<<"] = " << aux->imprimir() << std::endl;
+
+			for (int k = 0; k < this->j; k++) {
+				this->matriz_gauss[i][k] = *(
+					(new Fraccion())
+						->diferencia(this->matriz_gauss[i][k],
+							     *(new Fraccion())
+								      ->multiplicar(*(aux), this->matriz_gauss[j][k])));
+				// std::cout << this->matriz_gauss[i][k].imprimir() << std::endl;
+			}
+			gaussFraccion(i + 1, j);
+
 		} else
-			gauss(j + 2, j + 1);
+			gaussFraccion(j + 2, j + 1);
 	}
 }
 
