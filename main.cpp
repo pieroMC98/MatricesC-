@@ -42,14 +42,12 @@ int main() {
 	Matriz* f = new Matriz;
 	;
 
-	f->setI(T);
-	f->setJ(T);
+	f->setI(T).setJ(T);
 
 	f->setMatrizFraccion((Fraccion**)fraccion);  // F
 	f->getMatrizGauss();
 
-	m->setI(T);
-	m->setJ(T);
+	m->setI(T).setJ(T);
 
 	m->setMatriz((long double(*)[T])loFlipas);
 	// m->getMatriz();

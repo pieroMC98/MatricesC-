@@ -2,13 +2,18 @@
 
 #include <iostream>
 
-
 Matriz::Matriz(/* args */) {}
-void Matriz::setI(int N) { this->i = N; }
+Matriz &Matriz::setI(int N) {
+	this->i = N;
+	return *this;
+}
 
 int Matriz::getI() { return i; }
 
-void Matriz::setJ(int N) { this->j = N; }
+Matriz &Matriz::setJ(int N) {
+	this->j = N;
+	return *this;
+}
 
 int Matriz::getJ() { return j; }
 

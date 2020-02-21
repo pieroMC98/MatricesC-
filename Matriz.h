@@ -12,10 +12,13 @@ class Matriz : public Fraccion {
 	~Matriz();
 
 	int getI();
-	void setI(int);
+	//void setI(int);
 
 	int getJ();
-	void setJ(int);
+	//void setJ(int);
+
+	Matriz &setI(int);
+	Matriz &setJ(int);
 
 	void getMatriz();
 	void getMatrizGauss();
