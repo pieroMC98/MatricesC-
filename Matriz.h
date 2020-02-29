@@ -12,10 +12,8 @@ class Matriz : public Fraccion {
 	~Matriz();
 
 	int getI();
-	//void setI(int);
 
 	int getJ();
-	//void setJ(int);
 
 	Matriz &setI(int);
 	Matriz &setJ(int);
@@ -27,8 +25,7 @@ class Matriz : public Fraccion {
 	void setMatriz(long double[][SIZE]);
 
 	void setMatrizFraccion();
-	void setMatrizFraccion(Fraccion**);
-
+	void setMatrizFraccion(Fraccion **);
 
 	double *resultado(int, int, double (*)[SIZE]);
 

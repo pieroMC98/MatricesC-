@@ -15,6 +15,11 @@ class Fraccion {
        private:
 	int N, D;
 
+	long long int *fraccion_(long long int, long long int);
+
+	long long int *cribaEratostenes(long long int);
+	long long int *factores(long long int, long long int &);
+
        public:
 	Fraccion(long long int, long long int);
 	Fraccion(int);
