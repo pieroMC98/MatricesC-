@@ -25,10 +25,9 @@ long long int* Fraccion::cribaEratostenes(long long int count) {
 }
 
 long long int* Fraccion::factores(long long int i, long long int& factor) {
-	long long int *v = (long long int*)calloc(i, sizeof(long long int)), sum = 1500,
-		      *criba = cribaEratostenes(sum);
+	long long int *v = (long long int*)calloc(i, sizeof(long long int)), sum = 1500, *criba = cribaEratostenes(sum);
 	int k = 1;
-	
+
 	while (i != 1 && i != 0) {
 		k = 1;
 		while (1) {
@@ -69,6 +68,24 @@ long long int* Fraccion::fraccion_(long long int a, long long int b) {
 }
 
 Fraccion::Fraccion(long long int x, long long int y) {
+	if (y < 0) {
+		y *= -1;
+		x *= -1;
+	}
+
+	if ((x * -1) == y) {
+		x = -1;
+		y = 1;
+	}
+
+	// if (x != 0) {
+	// 	long long int* aux = fraccion_(x, y);
+	// 	this->N = aux[0];
+	// 	this->D = aux[1];
+	// } else {
+	// 	this->N = x;
+	// 	this->D = y;
+	// }
 	this->N = x;
 	this->D = y;
 }
@@ -89,24 +106,6 @@ int Fraccion::getN() { return this->N; }
 int Fraccion::getD() { return this->D; }
 
 Fraccion* Fraccion::multiplicar(Fraccion a, Fraccion b) { return new Fraccion(a.N * b.N, a.D * b.D); }
-Fraccion* Fraccion::cociente(Fraccion a, Fraccion b) {
-	if (a.D == b.D) a.D = b.D = 1;
-	if (a.N == b.N) a.N = b.N = 1;
-
-	if ((a.N * b.D) != 0) {
-		long long int* r = fraccion_(a.N * b.D, a.D * b.N);
-
-		if (a.N * b.D < 0) r[0] *= -1;
-		if (a.D * b.N < 0) r[1] *= -1;
-
-		if (r[0] < 0 && r[1] < 0) {
-			r[0] *= -1;
-			r[1] *= -1;
-		}
-
-		return new Fraccion(r[0], r[1]);
-	}
-	return new Fraccion(a.N * b.D, a.D * b.N);
-}
+Fraccion* Fraccion::cociente(Fraccion a, Fraccion b) { return new Fraccion(a.N * b.D, a.D * b.N); }
 Fraccion* Fraccion::diferencia(Fraccion a, Fraccion b) { return new Fraccion(a.N * b.D - b.N * a.D, a.D * b.D); }
-string Fraccion::imprimir() { return "(" + to_string(this->N) + " / " + to_string(this->D) + ")" + "  "; }
+string Fraccion::imprimir() { return "(" + to_string(this->N) + (" / " + to_string(this->D) + ")") + "  "; }

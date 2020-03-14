@@ -3,7 +3,6 @@
 #include "Fraccion.h"
 #include "Matriz.h"
 
-
 //#include "Sudoku.h"
 
 using namespace std;
@@ -20,8 +19,7 @@ int main() {
 
 	long double aux1[][4] = {{2, 1, -1, 2}, {4, 5, -3, 6}, {-2, 5, -2, 6}, {4, 11, -4, 8}};
 
-	long double loFlipas[][7] = {{1, 1, -2, 1, 3, -1, 4},  {2, -1, 1, 2, 1, -3, 20}, 
-	{1, 3, -3, -1, 2, 1, -15},
+	long double loFlipas[][7] = {{1, 1, -2, 1, 3, -1, 4},  {2, -1, 1, 2, 1, -3, 20}, {1, 3, -3, -1, 2, 1, -15},
 				     {5, 2, -1, -1, 2, 1, -3}, {-3, -1, 2, 3, 1, 3, 16}, {4, 3, 1, -6, -3, -2, -27}};
 
 	long double matrix[][9] = {
@@ -29,7 +27,8 @@ int main() {
 		{1, 0, 5, 0, 0, 0, 0, 0, 0}, {4, 0, 0, 0, 0, 0, 0, 0, 2}, {0, 0, 0, 0, 0, 0, 5, 0, 3},
 		{5, 7, 8, 3, 0, 1, 0, 2, 6}, {2, 0, 0, 0, 4, 8, 9, 0, 0}, {0, 9, 0, 6, 2, 5, 0, 8, 1}};
 
-	Fraccion** fraccion = new Fraccion*[SIZE - 1];
+	//Fraccion** fraccion = new Fraccion*[SIZE - 1];
+	Fraccion** fraccion = (Fraccion**)calloc(SIZE-1,sizeof(Fraccion*));
 
 	for (int i = 0; i < (SIZE - 1); i++) fraccion[i] = new Fraccion[SIZE];
 
@@ -41,10 +40,6 @@ int main() {
 
 	Matriz* m = new Matriz;
 	Matriz* f = new Matriz;
-	Fraccion* qtj = new Fraccion;
-
-	qtj = qtj->cociente(*(new Fraccion(0, 6)), *(new Fraccion(2, 1)));
-	std::cout << qtj->imprimir() << std::endl;
 
 	f->setI(SIZE - 1).setJ(SIZE);
 
@@ -64,6 +59,7 @@ int main() {
 	cout << endl << " ---- " << endl;
 
 	delete m;
+	delete f;
 
 	jump;
 

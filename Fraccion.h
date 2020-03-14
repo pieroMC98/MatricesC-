@@ -1,5 +1,6 @@
 #ifndef CLASE_FRACCION_H
 #define CLASE_FRACCION_H
+#include <string.h>
 #include <unistd.h>
 
 #include <cstdlib>
