@@ -1,6 +1,5 @@
 Matriz.o
 main
-C-WorkStation.code-workspace
 main.o
 M
 main.exeout.txt
@@ -9,3 +8,4 @@ out.txt
 MetodoNewton*
 z*
 *.json
+C-WorkStation.code-workspace
