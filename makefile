@@ -3,6 +3,7 @@
 
 G++	   = g++
 source = Fraccion.cpp Matriz.cpp main.cpp
+
 debug  = -g -Wall
 O 	   = -o
 build  = main
@@ -14,4 +15,4 @@ ${build}: ${source}
 
 run: main
 	@clear
-	@${RUN}main 1> out.txt
+	@${RUN}main

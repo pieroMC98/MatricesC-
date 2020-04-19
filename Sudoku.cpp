@@ -19,8 +19,8 @@ int Sudoku::asignation(int &row, int &col) {
 }
 
 /*
- * 
-*/
+ *
+ */
 int Sudoku::isSafe(int n, int r, int c) {
 	for (int i = 0; i < this->i; i++) {
 		/*   if( this->matriz[r][i] == n || this->matriz[i][c] == n)
