@@ -1,9 +1,7 @@
 #include <vector>
 
 #include "Fraccion.h"
-#include "Matriz.h"
-
-//#include "Sudoku.h"
+#include "Sudoku.h"
 
 using namespace std;
 
@@ -27,8 +25,7 @@ int main() {
 		{1, 0, 5, 0, 0, 0, 0, 0, 0}, {4, 0, 0, 0, 0, 0, 0, 0, 2}, {0, 0, 0, 0, 0, 0, 5, 0, 3},
 		{5, 7, 8, 3, 0, 1, 0, 2, 6}, {2, 0, 0, 0, 4, 8, 9, 0, 0}, {0, 9, 0, 6, 2, 5, 0, 8, 1}};
 
-	//Fraccion** fraccion = new Fraccion*[SIZE - 1];
-	Fraccion** fraccion = (Fraccion**)calloc(SIZE-1,sizeof(Fraccion*));
+	Fraccion** fraccion = (Fraccion**)calloc(SIZE - 1, sizeof(Fraccion*));
 
 	for (int i = 0; i < (SIZE - 1); i++) fraccion[i] = new Fraccion[SIZE];
 
